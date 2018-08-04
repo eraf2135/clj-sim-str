@@ -50,6 +50,3 @@
                  (first new-outer)))))
 
     (second @best-match)))
-
-(comment
-  (closest (list "abc" "ac" "bac" "bacc")))
