@@ -15,7 +15,7 @@
   [best-match]
   (zero? (first best-match)))
 
-(defn- closest
+(defn closest
   "This will cycle through each pair of strings => O((n2 + n) / 2) (i.e. nth triangular number)
    and calculate the levenshtein distance => O(n1 n2)
    However, it'll short circuit on equality just in case there are duplicates.
@@ -39,13 +39,13 @@
 
         (when (and (not (exact-match-found? @best-match))
                    (> (count inner-coll) 1))
-          (let [new-inner-coll (pop inner-coll)]
+          (let [new-inner-coll (rest inner-coll)]
             (recur new-inner-coll
                    (first new-inner-coll)))))
 
       (when (and (not (exact-match-found? @best-match))
                  (> (count outer-coll) 2))
-        (let [new-outer (pop outer-coll)]
+        (let [new-outer (rest outer-coll)]
           (recur new-outer
                  (first new-outer)))))
 

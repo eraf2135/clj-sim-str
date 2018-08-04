@@ -1,14 +1,28 @@
 # clj-sim-str
 
-A Clojure library designed to ... well, that part is up to you.
+
+Finds the 2 "most similar" strings given a list of strings.
+
+Reads standard in, expecting a list with each line being a single string for comparison. e.g.
+
+      Foo bar
+      Foos bars
+      Dogs
+      Cats
+
+Outputs the two most similar strings found, one per line.
+
+    Foo bar
+    Foos bars
 
 ## Usage
 
-FIXME
+    lein run
+    
+Or you can build an executable jar using:
 
-## License
+    lein uberjar
+    
+Then run with:
 
-Copyright © 2018 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+    java -jar ./target/clj-sim-str.jar
